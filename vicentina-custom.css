@@ -1,0 +1,1049 @@
+/* ======================================= */
+/* ESTILOS PRINCIPALES DE VICENTINA */
+/* ======================================= */
+
+/* Estilos del body */
+body {
+  background-color: #9B7BB8;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======================================= */
+/* ESTILOS DEL NAVBAR */
+/* ======================================= */
+
+.navbar {
+  background-color: #000 !important;
+  border-bottom: 2px solid #333 !important;
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 1030 !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.navbar-brand:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.navbar-brand h2 {
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 28px;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover h2 {
+  transform: scale(1.02);
+}
+
+.navbar-nav.navbar-right li a {
+  color: #fff !important;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 15px 20px;
+  border-radius: 25px;
+  margin: 0 5px;
+}
+
+.navbar-nav.navbar-right li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.navbar-nav.navbar-right li a:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+.navbar-nav.navbar-right li a::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FF6B6B, #FF8E53);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav.navbar-right li a:hover::after {
+  width: 70%;
+}
+
+/* ======================================= */
+/* ESTILOS DEL SLIDER */
+/* ======================================= */
+
+.page-slider {
+  margin-top: 0px;
+  height: 400px; /* Altura moderada del banner */
+}
+
+/* Estilos para las imágenes de fondo de los slides */
+.carousel-item-four,
+.carousel-item-six,
+.carousel-item-seven,
+.carousel-item-eight {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+}
+
+/* Overlay oscuro para mejorar la legibilidad del texto */
+.carousel-item-four::before,
+.carousel-item-six::before,
+.carousel-item-seven::before,
+.carousel-item-eight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Overlay semi-transparente */
+  z-index: 1;
+}
+
+/* Asegurar que el contenido esté por encima del overlay */
+.carousel-item-four .container,
+.carousel-item-six .container,
+.carousel-item-seven .center-block,
+.carousel-item-eight .container {
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-slider {
+  height: 400px !important; /* Altura del carrusel */
+}
+
+.carousel-inner {
+  height: 400px !important; /* Altura del contenedor interno */
+}
+
+.carousel-inner .item {
+  height: 400px !important; /* Altura de cada slide */
+}
+
+/* Ajustar posicionamiento del contenido del banner */
+.carousel-position-four {
+  padding-top: 80px; /* Espacio moderado desde arriba */
+}
+
+/* Posicionamiento específico para el segundo slide */
+.carousel-item-six .carousel-position-four {
+  padding-top: 40px; /* 25px más arriba */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 400px;
+  padding-left: 100px;
+}
+
+/* Mejorar la visualización del texto del segundo slide */
+.carousel-item-six .carousel-subtitle-v3 {
+  font-size: 42px !important;
+  font-weight: 700 !important;
+  margin-bottom: 25px !important;
+  color: #FFD700 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1.5px;
+}
+
+.carousel-item-six .carousel-subtitle-v4 {
+  font-size: 42px !important;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
+  color: #FFD700 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+}
+
+/* ======================================= */
+/* ESTILOS MEJORADOS PARA TÍTULOS Y FRASES DEL BANNER */
+/* ======================================= */
+
+.carousel-title-v3 {
+  font-size: 3.2rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 30px !important;
+  color: #FFD700;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  letter-spacing: 2px;
+  line-height: 1.2;
+  position: relative;
+}
+
+
+
+.carousel-subtitle-v2 {
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 25px !important;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.carousel-subtitle-v3 {
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 25px !important;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1.5px;
+}
+
+.carousel-subtitle-v4 {
+  font-size: 1.8rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+}
+
+/* Color especial para el span destacado */
+.carousel-title-v3 .color-red-v2 {
+  color: #FFD700 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 900 !important;
+}
+
+/* ======================================= */
+/* ANIMACIONES PARA EL TEXTO DEL BANNER */
+/* ======================================= */
+
+
+
+
+
+
+
+
+
+
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ======================================= */
+/* ESTILOS MEJORADOS DE LOS CONTROLES DEL CARRUSEL */
+/* ======================================= */
+
+.carousel-control {
+  background: transparent !important;
+  border: none !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.carousel-control:hover {
+  background: transparent !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+.carousel-control.left {
+  left: 30px !important;
+}
+
+.carousel-control.right {
+  right: 30px !important;
+}
+
+.carousel-control i {
+  font-size: 24px !important;
+  color: #fff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.carousel-control:hover i {
+  transform: translateY(10px) scale(1.2);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* ======================================= */
+/* ESTILOS MEJORADOS DE LOS INDICADORES DEL CARRUSEL */
+/* ======================================= */
+
+.carousel-indicators {
+  bottom: 30px;
+  z-index: 15;
+}
+
+.carousel-indicators li {
+  width: 16px;
+  height: 16px;
+  margin: 0 8px;
+  border: 2px solid #B8C5D1;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-indicators li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: linear-gradient(45deg, #B8C5D1, #8FA3B8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-indicators li:hover {
+  border-color: #8FA3B8;
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(143, 163, 184, 0.6);
+}
+
+.carousel-indicators li.active {
+  border-color: #8FA3B8;
+  background: linear-gradient(45deg, #B8C5D1, #8FA3B8);
+  transform: scale(1.3);
+  box-shadow: 
+    0 0 20px rgba(143, 163, 184, 0.8),
+    0 0 40px rgba(184, 197, 209, 0.6);
+}
+
+.carousel-indicators li.active::before {
+  width: 100%;
+  height: 100%;
+  animation: indicatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* ======================================= */
+/* ESTILOS DE LAS SECCIONES */
+/* ======================================= */
+
+.section-category {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 50px; /* Espaciado aumentado entre secciones */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Margen superior específico para la sección de niños y niñas */
+#ninos-ninas {
+  margin-top: 80px; /* Espaciado aumentado desde el banner */
+}
+
+.section-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.section-title {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.category-content {
+  text-align: center;
+}
+
+.category-content p {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ======================================= */
+/* ESTILOS DEL CARRUSEL DE PRODUCTOS */
+/* ======================================= */
+
+.product-carousel-container {
+  position: relative;
+  margin-top: 30px;
+  overflow: visible;
+}
+
+.product-cards {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  gap: 25px;
+  padding: 0 10px;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.product-cards:active {
+  cursor: grabbing;
+}
+
+.product-card {
+  min-width: 220px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 8px;
+  overflow: visible;
+  transition: all 0.4s ease;
+  border: none;
+  position: relative;
+  pointer-events: auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 10px 10px 20px 10px;
+  transform: rotate(0deg);
+}
+
+.product-card:hover {
+  transform: translateY(-15px) rotate(0deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.card-image {
+  height: 220px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  filter: contrast(1.1) brightness(1.05);
+}
+
+.product-card:hover .card-image img {
+  transform: scale(1.08);
+  filter: contrast(1.2) brightness(1.1);
+}
+
+/* Tarjetas destacadas */
+.product-card.featured {
+  background: #fff;
+  border: 3px solid #FFD700;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 215, 0, 0.9);
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Flechas de navegación */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: auto;
+  will-change: transform;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-arrow i {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-arrow:hover i {
+  transform: translateY(10px);
+}
+
+.carousel-arrow.prev {
+  left: 10px;
+}
+
+.carousel-arrow.next {
+  right: 10px;
+}
+
+.carousel-arrow.next.at-end {
+  animation: bounceRight 0.6s ease-in-out;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes bounceRight {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* ======================================= */
+/* ESTILOS DEL FORMULARIO DE CONTACTO */
+/* ======================================= */
+
+.contact-form-container {
+  margin-top: 30px;
+}
+
+.contact-form {
+  background: transparent;
+  padding: 30px;
+  border-radius: 0;
+  border: none;
+  backdrop-filter: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.form-group label {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-bottom-color: #fff;
+  box-shadow: none;
+  background: transparent;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #000;
+  padding: 15px 40px;
+  border-radius: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: #000;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* ======================================= */
+/* ESTILOS DEL FOOTER */
+/* ======================================= */
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-decoration: none !important;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none !important;
+  color: #fff;
+}
+
+.social-btn svg {
+  transition: transform 0.3s ease;
+  width: 24px;
+  height: 24px;
+}
+
+.social-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Facebook */
+.facebook-btn {
+  background: linear-gradient(135deg, #1877f2, #0d6efd);
+  border-color: #1877f2;
+}
+
+.facebook-btn:hover {
+  background: linear-gradient(135deg, #0d6efd, #1877f2);
+  box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);
+}
+
+/* Instagram */
+.instagram-btn {
+  background: linear-gradient(135deg, #e4405f, #c13584);
+  border-color: #e4405f;
+}
+
+.instagram-btn:hover {
+  background: linear-gradient(135deg, #c13584, #e4405f);
+  box-shadow: 0 4px 15px rgba(228, 64, 95, 0.4);
+}
+
+/* TikTok */
+.tiktok-btn {
+  background: linear-gradient(135deg, #000000, #25f4ee);
+  border-color: #000000;
+}
+
+.tiktok-btn:hover {
+  background: linear-gradient(135deg, #25f4ee, #000000);
+  box-shadow: 0 4px 15px rgba(37, 244, 238, 0.4);
+}
+
+/* ======================================= */
+/* ESTILOS DEL BOTÓN DE WHATSAPP */
+/* ======================================= */
+
+.whatsapp-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+.whatsapp-float {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 50% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+
+.whatsapp-icon {
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  z-index: 2;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
+.whatsapp-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.whatsapp-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border: 2px solid #25d366;
+  border-radius: 50% !important;
+  animation: pulse 2s infinite;
+  opacity: 0;
+}
+
+.whatsapp-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border: 2px solid rgba(37, 211, 102, 0.3);
+  border-radius: 50% !important;
+  animation: ripple 3s infinite;
+  opacity: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+  background: linear-gradient(135deg, #128c7e, #25d366);
+}
+
+.whatsapp-float:hover .whatsapp-icon {
+  transform: scale(1.1);
+}
+
+.whatsapp-float:active {
+  transform: scale(0.95);
+}
+
+.whatsapp-float:focus {
+  outline: none;
+  box-shadow: 
+    0 0 5px #25d366,
+    0 0 10px #25d366,
+    0 0 15px #25d366,
+    0 0 20px #25d366,
+    0 0 30px #25d366,
+    0 0 40px #25d366;
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+.whatsapp-float:hover {
+  box-shadow: 
+    0 0 5px #25d366,
+    0 0 10px #25d366,
+    0 0 15px #25d366,
+    0 0 20px #25d366,
+    0 0 30px #25d366,
+    0 0 40px #25d366;
+}
+
+@keyframes neon-glow {
+  from {
+    box-shadow: 
+      0 0 5px #25d366,
+      0 0 10px #25d366,
+      0 0 15px #25d366,
+      0 0 20px #25d366,
+      0 0 30px #25d366,
+      0 0 40px #25d366;
+  }
+  to {
+    box-shadow: 
+      0 0 2px #25d366,
+      0 0 5px #25d366,
+      0 0 8px #25d366,
+      0 0 12px #25d366,
+      0 0 18px #25d366,
+      0 0 25px #25d366;
+  }
+}
+
+/* ======================================= */
+/* ESTILOS RESPONSIVOS */
+/* ======================================= */
+
+@media (max-width: 768px) {
+  /* Ajustes del banner para móviles */
+  .page-slider {
+    height: 300px;
+  }
+  
+  .carousel-slider {
+    height: 300px !important;
+  }
+  
+  .carousel-inner {
+    height: 300px !important;
+  }
+  
+  .carousel-inner .item {
+    height: 300px !important;
+  }
+  
+  .carousel-position-four {
+    padding-top: 60px;
+  }
+  
+  .carousel-title-v3 {
+    font-size: 2rem !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .carousel-subtitle-v2 {
+    font-size: 1rem !important;
+    margin-bottom: 12px !important;
+  }
+  
+  /* Ajustes del segundo slide para móviles */
+  .carousel-item-six .carousel-position-four {
+    padding-top: 20px;
+    min-height: 300px;
+    padding-left: 30px;
+  }
+  
+  .carousel-item-six .carousel-subtitle-v3 {
+    font-size: 28px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .carousel-item-six .carousel-subtitle-v4 {
+    font-size: 28px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .navbar-brand {
+    padding: 3px 10px;
+  }
+  
+  .navbar-brand h2 {
+    font-size: 24px !important;
+  }
+  
+  .navbar-nav.navbar-right li a {
+    padding: 12px 15px;
+    margin: 0 3px;
+    font-size: 14px;
+  }
+  
+  .navbar-nav.navbar-right li a:hover {
+    transform: translateY(-1px);
+  }
+  
+  .navbar-nav.navbar-right li a::after {
+    bottom: 6px;
+    height: 1px;
+  }
+  
+  .section-category {
+    padding: 20px;
+    margin-bottom: 35px; /* Espaciado aumentado para móviles */
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .category-content p {
+    font-size: 1rem;
+  }
+  
+  .product-cards {
+    gap: 15px;
+  }
+  
+  .product-card {
+    min-width: 200px;
+    transform: rotate(0deg) !important;
+  }
+  
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .carousel-arrow.prev {
+    left: 5px;
+  }
+  
+  .carousel-arrow.next {
+    right: 5px;
+  }
+  
+  .contact-form {
+    max-width: 100%;
+    margin: 0 15px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .card-image {
+    height: 180px;
+  }
+  
+  .whatsapp-container {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .whatsapp-float {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .whatsapp-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .whatsapp-pulse,
+  .whatsapp-ripple {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .social-buttons {
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .social-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .social-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
