@@ -12,7 +12,7 @@ body {
   color: #000 !important; /* Cambiar color de texto a negro por defecto */
 }
 
-/* Cambiar color de texto a negro para todos los elementos excepto navbar */
+/* Cambiar color de texto a negro para todos los elementos excepto navbar, sliders y footer */
 * {
   color: #000 !important;
 }
@@ -35,6 +35,41 @@ body {
 .cart-link *,
 .cart-icon,
 .cart-count {
+  color: #fff !important;
+}
+
+/* Excepción para los sliders - mantener colores originales (blanco/dorado) */
+.carousel-title-v3,
+.carousel-title-v3 *,
+.carousel-subtitle-v2,
+.carousel-subtitle-v2 *,
+.carousel-subtitle-v3,
+.carousel-subtitle-v3 *,
+.carousel-subtitle-v4,
+.carousel-subtitle-v4 *,
+.carousel-position-four,
+.carousel-position-four *,
+.carousel-item-four,
+.carousel-item-four *,
+.carousel-item-six,
+.carousel-item-six *,
+.carousel-item-seven,
+.carousel-item-seven *,
+.carousel-item-eight,
+.carousel-item-eight *,
+.color-red-v2 {
+  color: #FFD700 !important;
+}
+
+/* Excepción para el footer - mantener texto blanco */
+.footer,
+.footer *,
+.footer h4,
+.footer p,
+.social-buttons,
+.social-buttons *,
+.social-btn,
+.social-btn * {
   color: #fff !important;
 }
 
@@ -211,7 +246,7 @@ body {
   font-size: 3.2rem !important;
   font-weight: 800 !important;
   margin-bottom: 30px !important;
-  color: #FFD700;
+  color: #FFD700 !important;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
   letter-spacing: 2px;
   line-height: 1.2;
@@ -224,7 +259,7 @@ body {
   font-size: 1.4rem !important;
   font-weight: 600 !important;
   margin-bottom: 25px !important;
-  color: #FFD700;
+  color: #FFD700 !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   letter-spacing: 1px;
   line-height: 1.5;
@@ -234,7 +269,7 @@ body {
   font-size: 2.2rem !important;
   font-weight: 700 !important;
   margin-bottom: 25px !important;
-  color: #FFD700;
+  color: #FFD700 !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   letter-spacing: 1.5px;
 }
@@ -243,7 +278,7 @@ body {
   font-size: 1.8rem !important;
   font-weight: 600 !important;
   margin-bottom: 20px !important;
-  color: #FFD700;
+  color: #FFD700 !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   letter-spacing: 1px;
 }
