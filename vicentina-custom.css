@@ -808,10 +808,20 @@ body {
   letter-spacing: 1px;
 }
 
+.submit-btn span,
+.submit-btn .btn-icon {
+  color: inherit;
+}
+
 .submit-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   background: #000;
+  color: #fff !important;
+}
+
+.submit-btn:hover span,
+.submit-btn:hover .btn-icon {
   color: #fff !important;
 }
 
@@ -823,11 +833,21 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
+.submit-btn:focus span,
+.submit-btn:focus .btn-icon {
+  color: #fff !important;
+}
+
 .submit-btn:active {
   background: #000 !important;
   color: #fff !important;
   transform: translateY(0);
   border: 1px solid #000 !important;
+}
+
+.submit-btn:active span,
+.submit-btn:active .btn-icon {
+  color: #fff !important;
 }
 
 .submit-btn:focus-visible {
@@ -838,11 +858,21 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
+.submit-btn:focus-visible span,
+.submit-btn:focus-visible .btn-icon {
+  color: #fff !important;
+}
+
 .submit-btn:focus-within {
   background: #000 !important;
   color: #fff !important;
   border: 1px solid #000 !important;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.submit-btn:focus-within span,
+.submit-btn:focus-within .btn-icon {
+  color: #fff !important;
 }
 
 .btn-icon {
