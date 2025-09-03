@@ -11,6 +11,179 @@ const carousels = {
   featured: { currentSlide: 0, totalSlides: 29 }
 };
 
+// Sistema de carrito
+let cart = [];
+
+// Función para agregar artículos al carrito
+function addToCart(articleId, category, description) {
+  const existingItem = cart.find(item => item.id === articleId);
+  
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      id: articleId,
+      category: category,
+      description: description,
+      quantity: 1
+    });
+  }
+  
+  updateCartDisplay();
+  showCartNotification(articleId);
+}
+
+// Función para remover artículos del carrito
+function removeFromCart(articleId) {
+  cart = cart.filter(item => item.id !== articleId);
+  updateCartDisplay();
+}
+
+// Función para actualizar la cantidad de un artículo
+function updateQuantity(articleId, newQuantity) {
+  const item = cart.find(item => item.id === articleId);
+  if (item) {
+    if (newQuantity <= 0) {
+      removeFromCart(articleId);
+    } else {
+      item.quantity = newQuantity;
+      updateCartDisplay();
+    }
+  }
+}
+
+// Función para mostrar notificación de artículo agregado
+function showCartNotification(articleId) {
+  const notification = document.createElement('div');
+  notification.className = 'cart-notification';
+  notification.innerHTML = `
+    <div class="notification-content">
+      <span class="notification-icon">✅</span>
+      <span class="notification-text">Artículo ${articleId} agregado al carrito</span>
+    </div>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Animar la notificación
+  setTimeout(() => {
+    notification.classList.add('show');
+  }, 100);
+  
+  // Remover después de 3 segundos
+  setTimeout(() => {
+    notification.classList.remove('show');
+    setTimeout(() => {
+      document.body.removeChild(notification);
+    }, 300);
+  }, 3000);
+}
+
+// Función para actualizar la visualización del carrito
+function updateCartDisplay() {
+  const cartCount = document.getElementById('cart-count');
+  const cartItems = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const cartEmpty = document.getElementById('cart-empty');
+  
+  if (cartCount) {
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
+    cartCount.style.display = totalItems > 0 ? 'block' : 'none';
+  }
+  
+  if (cartItems) {
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+      const cartItem = document.createElement('div');
+      cartItem.className = 'cart-item';
+      cartItem.innerHTML = `
+        <div class="cart-item-info">
+          <span class="cart-item-id">${item.id}</span>
+          <span class="cart-item-category">${item.category}</span>
+        </div>
+        <div class="cart-item-controls">
+          <button onclick="updateQuantity('${item.id}', ${item.quantity - 1})" class="quantity-btn">-</button>
+          <span class="quantity">${item.quantity}</span>
+          <button onclick="updateQuantity('${item.id}', ${item.quantity + 1})" class="quantity-btn">+</button>
+          <button onclick="removeFromCart('${item.id}')" class="remove-btn">🗑️</button>
+        </div>
+      `;
+      cartItems.appendChild(cartItem);
+    });
+  }
+  
+  if (cartTotal) {
+    cartTotal.textContent = cart.length;
+  }
+  
+  // Mostrar/ocultar mensaje de carrito vacío
+  if (cartEmpty) {
+    cartEmpty.style.display = cart.length === 0 ? 'block' : 'none';
+  }
+}
+
+// Función para generar mensaje de WhatsApp
+function generateWhatsAppMessage() {
+  if (cart.length === 0) {
+    alert('Tu carrito está vacío. Agrega algunos artículos primero.');
+    return;
+  }
+  
+  let message = '¡Hola! Me interesan los siguientes artículos de Vicentina:\n\n';
+  
+  // Agrupar por categoría
+  const groupedCart = {};
+  cart.forEach(item => {
+    if (!groupedCart[item.category]) {
+      groupedCart[item.category] = [];
+    }
+    groupedCart[item.category].push(item);
+  });
+  
+  // Construir mensaje por categorías
+  Object.keys(groupedCart).forEach(category => {
+    message += `📂 ${category}:\n`;
+    groupedCart[category].forEach(item => {
+      message += `• Artículo #${item.id} (${item.description}) - Cantidad: ${item.quantity}\n`;
+    });
+    message += '\n';
+  });
+  
+  message += '¿Podrían darme más información sobre disponibilidad y precios? ¡Gracias!';
+  
+  // Codificar mensaje para URL
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/+584245794208?text=${encodedMessage}`;
+  
+  // Abrir WhatsApp
+  window.open(whatsappUrl, '_blank');
+}
+
+// Función para limpiar el carrito
+function clearCart() {
+  cart = [];
+  updateCartDisplay();
+}
+
+// Función para mostrar/ocultar el carrito
+function toggleCart() {
+  const cartModal = document.getElementById('cart-modal');
+  const cartEmpty = document.getElementById('cart-empty');
+  
+  if (cartModal.classList.contains('show')) {
+    cartModal.classList.remove('show');
+  } else {
+    cartModal.classList.add('show');
+    // Mostrar/ocultar mensaje de carrito vacío
+    if (cart.length === 0) {
+      cartEmpty.style.display = 'block';
+    } else {
+      cartEmpty.style.display = 'none';
+    }
+  }
+}
+
 // Función para cambiar de slide
 function changeSlide(carouselId, direction) {
   const carousel = carousels[carouselId];
@@ -21,8 +194,9 @@ function changeSlide(carouselId, direction) {
   // Obtener la flecha derecha para aplicar efectos visuales
   const nextArrow = carouselElement.parentElement.querySelector('.carousel-arrow.next');
   
-  // Calcular el nuevo slide
-  carousel.currentSlide += direction;
+  // Calcular el nuevo slide moviendo 4 artículos a la vez
+  const itemsPerSlide = 4;
+  carousel.currentSlide += direction * itemsPerSlide;
   
   // Manejar el bucle con animación especial para la flecha derecha
   if (carousel.currentSlide >= carousel.totalSlides) {
@@ -59,7 +233,7 @@ function changeSlide(carouselId, direction) {
       carousel.currentSlide = 0;
     }
   } else if (carousel.currentSlide < 0) {
-    carousel.currentSlide = carousel.totalSlides - 1;
+    carousel.currentSlide = Math.max(0, carousel.totalSlides - itemsPerSlide);
   }
 
   // Calcular el scroll para movimientos normales
@@ -82,11 +256,15 @@ function handleCarouselScroll(carouselId) {
 
   carouselElement.addEventListener('scroll', () => {
     const slideWidth = 220 + 25; // ancho de la tarjeta + gap
+    const itemsPerSlide = 4;
     const scrollPosition = carouselElement.scrollLeft;
     const currentSlide = Math.round(scrollPosition / slideWidth);
     
-    if (currentSlide !== carousel.currentSlide) {
-      carousel.currentSlide = currentSlide;
+    // Ajustar para que el slide actual sea múltiplo de 4
+    const adjustedSlide = Math.floor(currentSlide / itemsPerSlide) * itemsPerSlide;
+    
+    if (adjustedSlide !== carousel.currentSlide) {
+      carousel.currentSlide = adjustedSlide;
     }
   });
 }
@@ -419,5 +597,11 @@ window.Vicentina = {
   changeSlide,
   scrollToSection,
   reloadPage,
-  initializeVicentina
+  initializeVicentina,
+  addToCart,
+  removeFromCart,
+  updateQuantity,
+  generateWhatsAppMessage,
+  clearCart,
+  toggleCart
 };
