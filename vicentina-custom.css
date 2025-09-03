@@ -815,6 +815,20 @@ body {
   color: #fff !important;
 }
 
+.submit-btn:focus {
+  outline: none;
+  background: #000;
+  color: #fff !important;
+  border: 1px solid #000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn:active {
+  background: #000;
+  color: #fff !important;
+  transform: translateY(0);
+}
+
 .btn-icon {
   font-size: 1.2rem;
 }
@@ -923,7 +937,7 @@ body {
   text-decoration: none;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  border: none;
+  border: 3px solid #fff;
   outline: none;
 }
 
@@ -991,10 +1005,12 @@ body {
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
   background: #128c7e;
+  border: 3px solid #fff;
 }
 
 .whatsapp-float:active {
   transform: scale(0.95);
+  border: 3px solid #fff;
 }
 
 /* ======================================= */
@@ -1498,6 +1514,7 @@ body {
   .whatsapp-float {
     width: 50px;
     height: 50px;
+    border: 2px solid #fff;
   }
   
   .whatsapp-icon {
